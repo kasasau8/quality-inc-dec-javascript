@@ -81,7 +81,10 @@
       <p class="product-description">
             Simple and stylish vintage Leather bag. Perfect for carrying your essentials.
       </p>
-      <p class="product-price">₹ 500/-</p>
+      <p class="product-price">₹ 349/-</p>
+
+      <p id="show-quantity">1 x 349 </p>
+      <p id="show-total">Total: 349</p>
 
       <div class="quantity-btn-container">
         <img src="minus.png" class="btn-quantity" onclick="dec()"/>
@@ -98,6 +101,9 @@
     <script>
         function inc(){
             const quantityText = document.getElementById('quantity-text');
+            const showQuantity = document.getElementById("show-quantity");
+            const showTotal = document.getElementById("show-total");
+
             let quantity = parseInt(quantityText.innerText);
 
             if(quantity<10)
@@ -108,11 +114,16 @@
             {
                 alert("You can't add more than 10 items");
             }
-            
+
+            showQuantity.innerText = `${quantity} x 349`; 
+            showTotal.innerText = `Total: ${quantity * 349}`
         }
 
         function dec(){
             const quantityText = document.getElementById('quantity-text');
+            const showQuantity = document.getElementById("show-quantity");
+            const showTotal = document.getElementById("show-total");
+
             let quantity = parseInt(quantityText.innerText);
 
             if(quantity > 1)
@@ -123,7 +134,9 @@
             {
                 alert("You can't add more than 1 items");
             }
-                
+
+            showQuantity.innerText = `${quantity} x 349`; 
+            showTotal.innerText = `Total: ${quantity * 349}`   
         }
 
     </script>
